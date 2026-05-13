@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Multifort</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <main class="login-container">
+
+        <section class="left-side">
+            <div class="overlay"></div>
+
+            <div class="left-content">
+                <a href="../index.html" class="logo">Multifort</a>
+
+                <div class="text-area">
+                    <h1>O futuro da energia começa aqui.</h1>
+
+                    <p>
+                        A plataforma mais inteligente para simular orçamentos,
+                        gerenciar leads de energia solar e escalar o seu negócio.
+                    </p>
+
+                    <div class="tags">
+                        <span>Simulações Precisas</span>
+                        <span>Mais Conversão</span>
+                    </div>
+                </div>
+
+                <p class="copyright">
+                    © 2026 Multifort Interativo. Todos os direitos reservados.
+                </p>
+            </div>
+        </section>
+
+        <section class="right-side">
+
+            <div class="form-box">
+                <h2>Bem-vindo de volta</h2>
+
+                <p class="subtitle">
+                    Insira suas credenciais para acessar sua conta.
+                </p>
+
+                <form id="formLogin">
+
+                    <div class="field">
+                        <label>E-mail</label>
+
+                        <div class="input-box">
+                            <span class="input-icon input-icon-email" aria-hidden="true"></span>
+                            <input type="email" placeholder="seu@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <div class="label-row">
+                            <label>Senha</label>
+                            <a href="#">Esqueceu a senha?</a>
+                        </div>
+
+                        <div class="input-box">
+                            <span class="input-icon input-icon-password" aria-hidden="true"></span>
+                            <input id="senha" type="password" placeholder="••••••••" required>
+                            <button type="button" class="password-toggle" id="btnMostrarSenha" aria-label="Mostrar ou ocultar senha"></button>
+                        </div>
+                    </div>
+
+                    <label class="remember">
+                        <input type="checkbox">
+                        <span>Lembrar-me neste dispositivo</span>
+                    </label>
+
+                    <button class="btn-login" type="submit">
+                        Entrar
+                    </button>
+
+                </form>
+
+                <p class="register">
+                    Ainda não tem uma conta?
+                    <a href="cadastro.html">Criar conta agora</a>
+                </p>
+
+                <div class="line"></div>
+
+                <p class="enter-as">OU ENTRE COMO</p>
+
+                <div class="profile-buttons">
+                    <button data-tipo="Cliente">Cliente</button>
+                    <button data-tipo="Vendedor">Vendedor</button>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="login.js"></script>
+</body>
+</html>

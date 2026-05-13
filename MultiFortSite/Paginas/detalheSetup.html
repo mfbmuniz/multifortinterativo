@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Setup - Multifort</title>
+
+    <link rel="stylesheet" href="detalheSetup.css">
+</head>
+<body>
+
+<header class="header">
+    <a href="../index.html" class="logo">Multifort</a>
+
+    <nav class="menu">
+        <a href="simulacaoUploadPDF.html">Nova Simulação</a>
+        <a href="#">Meus Orçamentos</a>
+    </nav>
+
+    <div class="profile">
+        <div>
+            <h4>João Silva</h4>
+            <span>Cliente</span>
+        </div>
+
+        <img src="https://i.pravatar.cc/100" alt="">
+    </div>
+</header>
+
+<main class="container">
+
+    <div class="back">
+        <a href="resultado.html">← Voltar para Resultados</a>
+        <span>/</span>
+        <strong>Detalhes do Setup</strong>
+    </div>
+
+    <section class="title-area">
+        <h1>
+            Setup Ideal
+            <span>MAIS RECOMENDADO</span>
+        </h1>
+
+        <p>
+            O equilíbrio perfeito entre custo-benefício, zerando sua conta e garantindo estabilidade.
+        </p>
+    </section>
+
+    <section class="content">
+
+        <div class="left-column">
+
+            <div class="box">
+                <div class="box-title">
+                    <span class="title-icon title-icon-panels" aria-hidden="true"></span>
+                    <h2>Dimensionamento do Sistema</h2>
+                </div>
+
+                <div class="dimension-card">
+                    <div>
+                        <h4>Quantidade de Placas</h4>
+
+                        <p>
+                            Ajuste para gerar mais energia e créditos excedentes.
+                        </p>
+
+                        <div class="counter">
+                            <button id="btnDiminuir">−</button>
+                            <strong id="qtdPlacas">8</strong>
+                            <button id="btnAumentar">+</button>
+
+                            <span>Painéis de 550W</span>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="power">
+                        <h4>Potência Total do Sistema</h4>
+
+                        <strong id="potencia">4.40</strong>
+                        <span>kWp</span>
+
+                        <p id="geracao">Gera aprox. 460 kWh/mês</p>
+                    </div>
+                </div>
+
+                <div class="compatibility">
+                    <h3 class="section-title section-title-inverter">Inversor e Compatibilidade</h3>
+
+                    <div class="green-card">
+                        <div class="check" aria-hidden="true"></div>
+
+                        <div class="green-content">
+                            <div class="green-title">
+                                <h3 id="nomeInversor">Inversor Growatt 5kW</h3>
+                                <span id="statusInversor">Compatibilidade Perfeita</span>
+                            </div>
+
+                            <p id="textoInversor">
+                                O sistema selecionou automaticamente este inversor pois ele suporta a carga de 8 painéis.
+                            </p>
+
+                            <div class="warning">
+                                Se você adicionar mais 3 placas, o sistema mudará automaticamente para um inversor de 8kW.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="box-title">
+                    <span class="title-icon title-icon-notes" aria-hidden="true"></span>
+                    <h2>Observações Técnicas</h2>
+                </div>
+
+                <div class="notes-grid">
+                    <div class="note">
+                        <h4 class="note-area">Área de Telhado</h4>
+                        <p>Necessário aproximadamente 20m² de área útil e sem sombreamento intenso.</p>
+                    </div>
+
+                    <div class="note">
+                        <h4 class="note-grid">Conexão à Rede</h4>
+                        <p>Sistema On-Grid. Você continuará conectado à rede pagando apenas a taxa mínima.</p>
+                    </div>
+
+                    <div class="note">
+                        <h4 class="note-installation">Instalação Padrão</h4>
+                        <p>Suportes previstos para telhado cerâmico ou fibrocimento.</p>
+                    </div>
+
+                    <div class="note">
+                        <h4 class="note-warranty">Garantias</h4>
+                        <p>Painéis: 12 anos contra defeitos. Inversor: 10 anos.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <aside class="right-column">
+
+            <div class="finance-box">
+                <h2>Resumo Financeiro</h2>
+
+                <div class="economy">
+                    <span class="economy-icon" aria-hidden="true"></span>
+                    <strong>95%</strong>
+                    <span>de economia na conta</span>
+                </div>
+
+                <div class="price-row">
+                    <span>Sua Conta Atual</span>
+                    <strong>R$ 420,00</strong>
+                </div>
+
+                <div class="price-row green-row">
+                    <span>Nova Conta Estimada</span>
+                    <strong>R$ 50,00</strong>
+                </div>
+
+                <div class="credit-box">
+                    <h3 class="credit-title">Geração de Créditos</h3>
+
+                    <p>
+                        Este setup gera aproximadamente <strong>10 kWh excedentes</strong> por mês.
+                        Esses créditos não expiram por 60 meses.
+                    </p>
+                </div>
+
+                <hr>
+
+                <button id="btnSolicitarProposta">
+                    Solicitar Proposta Comercial
+                </button>
+
+                <p class="small-text">
+                    Nossos fornecedores parceiros enviarão orçamentos detalhados.
+                </p>
+            </div>
+
+        </aside>
+
+    </section>
+
+</main>
+
+<script src="detalheSetup.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado - Multifort</title>
+
+    <link rel="stylesheet" href="resultado.css">
+</head>
+<body>
+
+<header class="header">
+    <a href="../index.html" class="logo">Multifort</a>
+
+    <nav class="menu">
+        <a href="simulacaoUploadPDF.html">Nova Simulação</a>
+        <a href="#">Meus Orçamentos</a>
+    </nav>
+
+    <div class="profile">
+        <div>
+            <h4>João Silva</h4>
+            <span>Cliente</span>
+        </div>
+
+        <img src="https://i.pravatar.cc/100" alt="">
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="summary">
+        <div>
+            <h1>Sua Simulação está Pronta!</h1>
+
+            <p>
+                Com base no seu consumo médio de
+                <strong>450 kWh/mês</strong>, encontramos os melhores setups para você.
+            </p>
+        </div>
+
+        <div class="price-box">
+            <div>
+                <span>SUA CONTA ATUAL</span>
+                <strong>~ R$ 420,00</strong>
+            </div>
+
+            <div class="divider"></div>
+
+            <div>
+                <span>COM ENERGIA SOLAR</span>
+                <strong class="green">~ R$ 50,00</strong>
+            </div>
+        </div>
+    </section>
+
+    <section class="cards">
+
+        <div class="setup-card">
+            <div class="card-top">
+                <h2>Setup Básico</h2>
+                <span>Básico</span>
+            </div>
+
+            <h3>85% <small>de economia</small></h3>
+
+            <div class="details">
+                <p><span class="detail-generation">Geração Estimada</span> <strong>380 kWh/mês</strong></p>
+                <p><span class="detail-panels">Qtd. Placas</span> <strong>6 Placas (550W)</strong></p>
+                <p><span class="detail-inverter">Inversor</span> <strong>Microinversor ...</strong></p>
+                <p><span class="detail-area">Área Necessária</span> <strong>15 m²</strong></p>
+            </div>
+
+            <button data-setup="basico">
+                Ver Detalhes do Setup
+            </button>
+        </div>
+
+        <div class="setup-card recommended">
+            <div class="tag-rec">MAIS RECOMENDADO</div>
+
+            <div class="card-top">
+                <h2>Setup Ideal</h2>
+                <span>Ideal</span>
+            </div>
+
+            <h3>95% <small>de economia</small></h3>
+
+            <div class="details">
+                <p><span class="detail-generation">Geração Estimada</span> <strong>460 kWh/mês</strong></p>
+                <p><span class="detail-panels">Qtd. Placas</span> <strong>8 Placas (550W)</strong></p>
+                <p><span class="detail-inverter">Inversor</span> <strong>Inversor Growa...</strong></p>
+                <p><span class="detail-area">Área Necessária</span> <strong>20 m²</strong></p>
+            </div>
+
+            <button class="blue" data-setup="ideal">
+                Ver Detalhes do Setup
+            </button>
+        </div>
+
+        <div class="setup-card">
+            <div class="card-top">
+                <h2>Setup Futuro</h2>
+                <span>Avançado</span>
+            </div>
+
+            <h3>100%+ <small>de economia</small></h3>
+
+            <div class="details">
+                <p><span class="detail-generation">Geração Estimada</span> <strong>600 kWh/mês</strong></p>
+                <p><span class="detail-panels">Qtd. Placas</span> <strong>11 Placas (550W)</strong></p>
+                <p><span class="detail-inverter">Inversor</span> <strong>Inversor Deye 8...</strong></p>
+                <p><span class="detail-area">Área Necessária</span> <strong>28 m²</strong></p>
+            </div>
+
+            <button data-setup="futuro">
+                Ver Detalhes do Setup
+            </button>
+        </div>
+
+    </section>
+
+    <section class="next-steps">
+        <div class="info-icon">i</div>
+
+        <div>
+            <h3>Próximos Passos</h3>
+
+            <p>
+                Selecione o setup que melhor atende às suas necessidades para ver
+                detalhes técnicos profundos. Após escolher, você poderá enviar esta
+                simulação para nossos fornecedores parceiros.
+            </p>
+
+            <button id="btnEspecialista">
+                Falar com um Especialista Agora
+            </button>
+        </div>
+    </section>
+
+</main>
+
+<script src="resultado.js"></script>
+</body>
+</html>

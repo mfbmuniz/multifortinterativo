@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processando - Multifort</title>
+
+    <link rel="stylesheet" href="simulacaoCarregando.css">
+</head>
+<body>
+
+<header class="header">
+
+    <a href="../index.html" class="logo">Multifort</a>
+
+    <nav class="menu">
+        <a href="#">Nova Simulação</a>
+        <a href="#">Meus Orçamentos</a>
+    </nav>
+
+    <div class="profile">
+        <div>
+            <h4>João Silva</h4>
+            <span>Cliente</span>
+        </div>
+
+        <img src="https://i.pravatar.cc/100" alt="">
+    </div>
+
+</header>
+
+<main class="container">
+
+    <div class="steps">
+
+        <div class="step done">
+            <div class="circle circle-done" aria-label="Etapa concluída"></div>
+            <span>Upload</span>
+        </div>
+
+        <div class="line green"></div>
+
+        <div class="step active">
+            <div class="circle">2</div>
+            <span>Análise</span>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="step">
+            <div class="circle">3</div>
+            <span>Resultados</span>
+        </div>
+
+    </div>
+
+    <div class="loading-card">
+
+        <div class="loader"></div>
+
+        <h2>Analisando sua fatura</h2>
+
+        <p>
+            Extraindo dados de consumo e calculando
+            as melhores opções de setup.
+        </p>
+
+        <div class="analysis-box">
+
+            <p class="success">
+                Fatura Enel SP identificada
+            </p>
+
+            <p class="success">
+                Consumo médio: 450 kWh/mês
+            </p>
+
+            <p class="processing">
+                Calculando dimensionamento dos painéis...
+            </p>
+
+            <p class="waiting">
+                Buscando inversores compatíveis
+            </p>
+
+        </div>
+
+    </div>
+
+</main>
+
+<script src="simulacaoCarregando.js"></script>
+</body>
+</html>

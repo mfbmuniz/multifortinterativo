@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f4f7fb;
+    color: #1e293b;
+}
+
+.login-container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.left-side {
+    position: relative;
+    background-image: url("https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&auto=format&fit=crop");
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(37, 99, 235, 0.88);
+}
+
+.left-content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.logo::before {
+    content: "\2600";
+    margin-right: 8px;
+}
+
+.text-area h1 {
+    font-size: 48px;
+    margin-bottom: 25px;
+}
+
+.text-area p {
+    font-size: 25px;
+    line-height: 1.5;
+    max-width: 650px;
+    margin-bottom: 45px;
+}
+
+.tags {
+    display: flex;
+    gap: 20px;
+}
+
+.tags span {
+    border: 1px solid rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.12);
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.tags span::before {
+    content: "\2713";
+    margin-right: 8px;
+}
+
+.copyright {
+    color: #cbd5e1;
+}
+
+.right-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.form-box {
+    width: 100%;
+    max-width: 560px;
+}
+
+.form-box h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    color: #64748b;
+    font-size: 22px;
+    margin-bottom: 45px;
+}
+
+.field {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.label-row a,
+.register a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.input-box {
+    height: 55px;
+    background: white;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    gap: 12px;
+}
+
+.input-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    background: transparent;
+}
+
+.input-box span {
+    color: #64748b;
+}
+
+.input-icon::before {
+    color: #64748b;
+}
+
+.input-icon-email::before {
+    content: "\2709";
+}
+
+.input-icon-password::before {
+    content: "\1F512";
+}
+
+.input-box button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #64748b;
+    font-size: 18px;
+}
+
+.password-toggle::before {
+    content: "\25CC";
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #64748b;
+    font-weight: normal;
+    margin-bottom: 35px;
+}
+
+.remember input {
+    width: 20px;
+    height: 20px;
+}
+
+.btn-login {
+    width: 100%;
+    height: 55px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.register {
+    text-align: center;
+    color: #64748b;
+    margin: 35px 0;
+    font-size: 18px;
+}
+
+.line {
+    height: 1px;
+    background: #cbd5e1;
+    margin: 25px 0;
+}
+
+.enter-as {
+    text-align: center;
+    color: #64748b;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.profile-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.profile-buttons button {
+    height: 50px;
+    border: 2px solid #2563eb;
+    background: transparent;
+    color: #2563eb;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media(max-width: 900px) {
+    .login-container {
+        grid-template-columns: 1fr;
+    }
+
+    .left-side {
+        min-height: 420px;
+    }
+
+    .text-area h1 {
+        font-size: 34px;
+    }
+
+    .text-area p {
+        font-size: 18px;
+    }
+
+    .tags {
+        flex-direction: column;
+    }
+
+    .form-box h2 {
+        font-size: 34px;
+    }
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload PDF - Multifort</title>
+
+    <link rel="stylesheet" href="simulacaoUploadPDF.css">
+</head>
+<body>
+
+<header class="header">
+
+    <a href="../index.html" class="logo">Multifort</a>
+
+    <nav class="menu">
+        <a href="#">Nova Simulação</a>
+        <a href="#">Meus Orçamentos</a>
+    </nav>
+
+    <div class="profile">
+        <div>
+            <h4>João Silva</h4>
+            <span>Cliente</span>
+        </div>
+
+        <img src="https://i.pravatar.cc/100" alt="">
+    </div>
+
+</header>
+
+<main class="container">
+
+    <h1>Simule seu Orçamento Solar</h1>
+
+    <p class="subtitle">
+        Envie sua fatura de energia para extrairmos os dados
+        e recomendarmos o setup ideal.
+    </p>
+
+    <div class="steps">
+
+        <div class="step active">
+            <div class="circle">1</div>
+            <span>Upload</span>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="step">
+            <div class="circle">2</div>
+            <span>Análise</span>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="step">
+            <div class="circle">3</div>
+            <span>Resultados</span>
+        </div>
+
+    </div>
+
+    <div class="upload-box">
+
+        <div class="upload-icon">
+            <span class="upload-file-icon" aria-hidden="true"></span>
+        </div>
+
+        <h2>Arraste sua fatura em PDF aqui</h2>
+
+        <p>
+            ou clique no botão abaixo para selecionar do seu computador
+        </p>
+
+        <input type="file" id="pdfInput" hidden>
+
+        <button id="btnSelecionarPdf">
+            Selecionar Arquivo PDF
+        </button>
+
+        <div class="upload-info">
+            <span>Apenas arquivos PDF</span>
+            <span>Leitura automática</span>
+            <span>Dados seguros</span>
+        </div>
+
+    </div>
+
+    <div class="info-card">
+
+        <div class="lamp" aria-hidden="true"></div>
+
+        <div>
+            <h3>Como funciona?</h3>
+
+            <p>
+                Nosso sistema lê o PDF da conta de luz,
+                identifica o consumo e monta o setup ideal.
+            </p>
+        </div>
+
+    </div>
+
+</main>
+
+<script src="simulacaoUploadPDF.js"></script>
+</body>
+</html>
