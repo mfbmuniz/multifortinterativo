@@ -1,0 +1,54 @@
+<div class="dashboard-layout">
+  <aside class="sidebar">
+    <a class="brand" routerLink="/">Multifort</a>
+    <nav>
+      <a routerLink="/painel/admin">Visao geral</a>
+      <a class="active" routerLink="/admin/setups" routerLinkActive="active">Setups</a>
+    </nav>
+    <div class="sidebar-footer">
+      <button type="button" (click)="logout()">Sair</button>
+    </div>
+  </aside>
+
+  <main class="dashboard-main">
+    <header class="dashboard-topbar">
+      <div>
+        <h1>Gerenciamento de setups</h1>
+        <p class="muted">Cadastre, edite, exclua e marque setups recomendados.</p>
+      </div>
+      <button class="btn primary" type="button" (click)="openNew()">Novo setup</button>
+    </header>
+
+    <section class="dashboard-content">
+      <section class="setup-grid">
+        @for (setup of setups; track setup.id) {
+          <article class="card setup-admin-card" [class.recommended]="setup.isRecommended">
+            <header>
+              <div>
+                <small>{{ setup.category }}</small>
+                <h2>{{ setup.name }}</h2>
+              </div>
+              @if (setup.isRecommended) {
+                <span>Recomendado</span>
+              }
+            </header>
+            <dl>
+              <div><dt>Placas</dt><dd>{{ setup.panelQuantity }}</dd></div>
+              <div><dt>Potencia</dt><dd>{{ setup.estimatedPower }} kWp</dd></div>
+              <div><dt>Investimento</dt><dd>{{ setup.estimatedPrice | currency:'BRL':'symbol':'1.0-0' }}</dd></div>
+              <div><dt>Economia</dt><dd>{{ setup.estimatedSavings }}%</dd></div>
+            </dl>
+            <footer>
+              <button class="btn" type="button" (click)="openEdit(setup)">Editar</button>
+              <button class="btn" type="button" (click)="delete(setup.id)">Excluir</button>
+            </footer>
+          </article>
+        }
+      </section>
+    </section>
+  </main>
+</div>
+
+@if (isDialogOpen) {
+  <app-setup-form-dialog [setup]="editingSetup" (close)="isDialogOpen = false" (saved)="save($event)" />
+}

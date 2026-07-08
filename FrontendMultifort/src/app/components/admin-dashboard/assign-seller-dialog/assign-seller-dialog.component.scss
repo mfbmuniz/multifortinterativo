@@ -1,0 +1,28 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background: rgba(15, 23, 42, .46);
+}
+
+.dialog {
+  position: fixed;
+  inset: 50% auto auto 50%;
+  z-index: 11;
+  width: min(460px, calc(100% - 32px));
+  transform: translate(-50%, -50%);
+  display: grid;
+  gap: 20px;
+  padding: 24px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+h2 {
+  margin: 0;
+}

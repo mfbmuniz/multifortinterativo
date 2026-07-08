@@ -1,0 +1,19 @@
+<div class="backdrop" (click)="close.emit()"></div>
+<section class="dialog card" role="dialog" aria-modal="true">
+  <header>
+    <h2>Encaminhar para vendedor</h2>
+    <button class="btn" type="button" (click)="close.emit()">Fechar</button>
+  </header>
+  <label class="field">
+    <span>Vendedor</span>
+    <select [(ngModel)]="selectedSellerId">
+      <option value="">Selecione</option>
+      @for (seller of sellers; track seller.id) {
+        <option [value]="seller.id">{{ seller.name }}</option>
+      }
+    </select>
+  </label>
+  <button class="btn primary" type="button" [disabled]="!selectedSellerId" (click)="assigned.emit(selectedSellerId)">
+    Atribuir vendedor
+  </button>
+</section>

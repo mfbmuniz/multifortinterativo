@@ -1,0 +1,48 @@
+<main class="login-page">
+  <section class="login-hero">
+    <a class="brand" routerLink="/">Multifort</a>
+    <div>
+      <h1>O futuro da energia comeca aqui.</h1>
+      <p>A plataforma para simular orcamentos, gerenciar leads solares e acompanhar propostas.</p>
+      <div class="tags">
+        <span>Simulacoes precisas</span>
+        <span>Mais conversao</span>
+      </div>
+    </div>
+    <small>© 2026 Multifort Interativo. Todos os direitos reservados.</small>
+  </section>
+
+  <section class="form-panel">
+    <form class="login-form" [formGroup]="form" (ngSubmit)="login()">
+      <header>
+        <h2>Bem-vindo de volta</h2>
+        <p>Insira suas credenciais para acessar sua conta.</p>
+      </header>
+
+      <div class="field">
+        <label for="email">E-mail</label>
+        <input id="email" type="email" formControlName="email" placeholder="seu@email.com">
+      </div>
+      <div class="field">
+        <label for="password">Senha</label>
+        <input id="password" type="password" formControlName="password" placeholder="123456">
+      </div>
+
+      @if (errorMessage) {
+        <p class="error">{{ errorMessage }}</p>
+      }
+
+      <button class="btn primary" type="submit">Entrar</button>
+
+      <p class="register">Ainda nao tem uma conta? <a routerLink="/cadastro">Criar conta agora</a></p>
+
+      <div class="divider"></div>
+      <span class="enter-as">Ou entre como</span>
+      <div class="profile-buttons">
+        <button class="btn" type="button" (click)="fillProfile('client')">Cliente</button>
+        <button class="btn" type="button" (click)="fillProfile('seller')">Vendedor</button>
+        <button class="btn" type="button" (click)="fillProfile('admin')">Admin</button>
+      </div>
+    </form>
+  </section>
+</main>

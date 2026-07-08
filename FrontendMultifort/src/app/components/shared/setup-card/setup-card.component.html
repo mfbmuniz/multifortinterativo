@@ -1,0 +1,40 @@
+<article class="setup-card" [class.recommended]="setup.isRecommended">
+  @if (setup.isRecommended) {
+    <div class="ribbon">Mais recomendado</div>
+  }
+
+  <header>
+    <h2>{{ setup.name }}</h2>
+    <span>{{ setup.category }}</span>
+  </header>
+
+  <strong class="saving">{{ setup.estimatedSavings }}% <small>de economia</small></strong>
+
+  <dl>
+    <div>
+      <dt>Geracao estimada</dt>
+      <dd>{{ setup.estimatedGeneration }} kWh/mes</dd>
+    </div>
+    <div>
+      <dt>Qtd. placas</dt>
+      <dd>{{ setup.panelQuantity }} placas (550W)</dd>
+    </div>
+    <div>
+      <dt>Inversor</dt>
+      <dd>{{ setup.inverter }}</dd>
+    </div>
+    <div>
+      <dt>Area necessaria</dt>
+      <dd>{{ setup.areaNeeded }} m²</dd>
+    </div>
+  </dl>
+
+  <footer>
+    <button class="btn" [class.primary]="setup.isRecommended" type="button" (click)="details.emit(setup)">
+      Ver detalhes
+    </button>
+    <button class="btn warning" type="button" (click)="selected.emit(setup)">
+      Selecionar
+    </button>
+  </footer>
+</article>

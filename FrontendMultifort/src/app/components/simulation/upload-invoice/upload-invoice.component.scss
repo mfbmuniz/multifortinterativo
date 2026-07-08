@@ -1,0 +1,66 @@
+.upload-page {
+  flex: 1;
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 48px;
+  align-items: center;
+  padding: 72px 0;
+}
+
+.badge {
+  display: inline-block;
+  border-radius: 999px;
+  color: #0f7a36;
+  background: #dcfce7;
+  padding: 10px 16px;
+  font-weight: 800;
+}
+
+h1 {
+  margin: 22px 0 16px;
+  font-size: clamp(36px, 5vw, 58px);
+  line-height: 1.08;
+}
+
+section p {
+  color: var(--muted);
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.upload-card {
+  display: grid;
+  gap: 20px;
+  padding: 28px;
+}
+
+.dropzone {
+  display: grid;
+  place-items: center;
+  gap: 12px;
+  min-height: 260px;
+  border: 2px dashed #b7c6dd;
+  border-radius: 8px;
+  color: var(--muted);
+  text-align: center;
+  padding: 30px;
+}
+
+.dropzone strong {
+  color: var(--primary);
+  font-size: 28px;
+}
+
+.dropzone input {
+  display: none;
+}
+
+.file-name {
+  margin: 0;
+}
+
+@media (max-width: 860px) {
+  .upload-page {
+    grid-template-columns: 1fr;
+  }
+}

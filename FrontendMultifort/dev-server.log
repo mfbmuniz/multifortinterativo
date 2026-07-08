@@ -1,0 +1,27 @@
+
+> frontend-multifort@0.0.0 start
+> ng serve --host 127.0.0.1 --port 4200
+
+❯ Building...
+✔ Building...
+Initial chunk files | Names         |  Raw size
+main.js             | main          | 225.40 kB | 
+styles.css          | styles        |   3.48 kB | 
+
+                    | Initial total | 228.87 kB
+
+Application bundle generation complete. [1.716 seconds] - 2026-07-04T21:32:00.661Z
+
+Watch mode enabled. Watching for file changes...
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+[2m18:32:00[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m Re-optimizing dependencies because vite config has changed
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://127.0.0.1:[1m4200[22m/[39m
+[2m[32m  ➜[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 225.71 kB | 
+
+Application bundle generation complete. [0.478 seconds] - 2026-07-05T12:17:57.774Z
+
+Page reload sent to client(s).

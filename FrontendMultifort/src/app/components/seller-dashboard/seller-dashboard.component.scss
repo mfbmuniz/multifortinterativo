@@ -1,0 +1,32 @@
+h1 {
+  margin: 0 0 6px;
+  font-size: 36px;
+}
+
+.metric-grid {
+  margin: 28px 0;
+}
+
+.metric {
+  display: grid;
+  gap: 16px;
+  padding: 24px;
+  border-top: 5px solid var(--primary);
+}
+
+.metric strong {
+  font-size: 36px;
+}
+
+.table-header {
+  padding: 24px;
+}
+
+.table-header h2 {
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}

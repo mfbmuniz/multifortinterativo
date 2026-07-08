@@ -1,0 +1,33 @@
+<div class="backdrop" (click)="close.emit()"></div>
+<section class="dialog card" role="dialog" aria-modal="true">
+  <header>
+    <h2>{{ setup ? 'Editar setup' : 'Novo setup' }}</h2>
+    <button class="btn" type="button" (click)="close.emit()">Fechar</button>
+  </header>
+
+  <form [formGroup]="form" (ngSubmit)="save()">
+    <div class="form-grid">
+      <label class="field"><span>Nome</span><input formControlName="name"></label>
+      <label class="field"><span>Categoria</span><input formControlName="category"></label>
+    </div>
+    <div class="form-grid">
+      <label class="field"><span>Qtd. placas</span><input type="number" formControlName="panelQuantity"></label>
+      <label class="field"><span>Potencia kWp</span><input type="number" formControlName="estimatedPower"></label>
+      <label class="field"><span>Geracao kWh</span><input type="number" formControlName="estimatedGeneration"></label>
+    </div>
+    <div class="form-grid">
+      <label class="field"><span>Economia %</span><input type="number" formControlName="estimatedSavings"></label>
+      <label class="field"><span>Investimento</span><input type="number" formControlName="estimatedPrice"></label>
+      <label class="field"><span>Payback meses</span><input type="number" formControlName="estimatedPaybackMonths"></label>
+    </div>
+    <div class="form-grid">
+      <label class="field"><span>Area m²</span><input type="number" formControlName="areaNeeded"></label>
+      <label class="field"><span>Inversor</span><input formControlName="inverter"></label>
+    </div>
+    <label class="field"><span>Descricao</span><textarea rows="3" formControlName="description"></textarea></label>
+    <label class="field"><span>Beneficios separados por virgula</span><input formControlName="benefits"></label>
+    <label class="field"><span>Itens incluidos separados por virgula</span><input formControlName="includedItems"></label>
+    <label class="check"><input type="checkbox" formControlName="isRecommended"> Marcar como recomendado</label>
+    <button class="btn primary" type="submit">Salvar setup</button>
+  </form>
+</section>

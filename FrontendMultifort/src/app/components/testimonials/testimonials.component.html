@@ -1,0 +1,18 @@
+<div class="page-shell">
+  <app-header />
+  <main class="container content-page">
+    <header>
+      <h1>Depoimentos</h1>
+      <p>Exemplos de percepcao de clientes e equipe comercial sobre a plataforma.</p>
+    </header>
+    <section class="testimonial-grid">
+      @for (testimonial of testimonials; track testimonial.name) {
+        <article class="card">
+          <p>"{{ testimonial.text }}"</p>
+          <strong>{{ testimonial.name }}</strong>
+        </article>
+      }
+    </section>
+  </main>
+  <app-footer />
+</div>

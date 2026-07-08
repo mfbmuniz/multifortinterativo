@@ -1,0 +1,53 @@
+.register-page {
+  flex: 1;
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 48px;
+  align-items: center;
+  padding: 64px 0;
+}
+
+.badge {
+  display: inline-block;
+  border-radius: 999px;
+  color: #9a7000;
+  background: #fff3c4;
+  padding: 10px 16px;
+  font-weight: 800;
+}
+
+h1 {
+  margin: 22px 0 18px;
+  font-size: clamp(34px, 5vw, 56px);
+  line-height: 1.08;
+}
+
+section p {
+  color: var(--muted);
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+form {
+  display: grid;
+  gap: 18px;
+  padding: 28px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+a {
+  color: var(--primary);
+  font-weight: 800;
+}
+
+@media (max-width: 860px) {
+  .register-page,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

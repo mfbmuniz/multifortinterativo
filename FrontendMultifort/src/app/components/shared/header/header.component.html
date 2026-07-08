@@ -1,0 +1,20 @@
+<header class="site-header">
+  <a class="brand" routerLink="/">Multifort</a>
+
+  <nav aria-label="Navegacao principal">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
+    <a routerLink="/simulacao/upload" routerLinkActive="active">Simulacao</a>
+    <a routerLink="/depoimentos" routerLinkActive="active">Depoimentos</a>
+    <a routerLink="/faq" routerLinkActive="active">FAQ</a>
+  </nav>
+
+  <div class="actions">
+    @if (currentUser) {
+      <a class="btn" [routerLink]="dashboardUrl">Meu painel</a>
+      <button class="btn primary" type="button" (click)="logout()">Sair</button>
+    } @else {
+      <a class="btn" routerLink="/login">Login</a>
+      <a class="btn primary" routerLink="/cadastro">Criar conta</a>
+    }
+  </div>
+</header>

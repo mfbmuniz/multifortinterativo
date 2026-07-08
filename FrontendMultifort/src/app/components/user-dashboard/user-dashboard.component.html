@@ -1,0 +1,56 @@
+<div class="dashboard-layout">
+  <aside class="sidebar">
+    <a class="brand" routerLink="/">Multifort</a>
+    <nav>
+      <a class="active" routerLink="/painel/usuario">Meus orcamentos</a>
+      <a routerLink="/simulacao/upload">Nova simulacao</a>
+      <a routerLink="/faq">Central de ajuda</a>
+    </nav>
+    <div class="sidebar-footer">
+      <strong>{{ user?.name }}</strong>
+      <button type="button" (click)="logout()">Sair da conta</button>
+    </div>
+  </aside>
+
+  <main class="dashboard-main">
+    <header class="dashboard-topbar">
+      <h1>Meus orcamentos</h1>
+      <a class="btn primary" routerLink="/simulacao/upload">Nova simulacao</a>
+    </header>
+
+    <section class="dashboard-content">
+      <h2>Ola, {{ user?.name }}!</h2>
+      <p class="muted">Acompanhe o status das suas simulacoes e o vendedor atribuido.</p>
+
+      <section class="profile card">
+        <strong>Meus dados</strong>
+        <span>{{ user?.email }}</span>
+        <span>{{ user?.phone || 'Telefone nao informado' }}</span>
+        <span>{{ user?.city || 'Cidade nao informada' }}</span>
+      </section>
+
+      <section class="history">
+        <h2>Historico de simulacoes</h2>
+        @for (simulation of simulations; track simulation.id) {
+          <article class="card simulation-card">
+            <div>
+              <small>#{{ simulation.id.slice(0, 6) }}</small>
+              <app-status-badge [status]="simulation.status" />
+              <h3>{{ getSetupName(simulation.selectedSetupId) }}</h3>
+              <p>{{ simulation.consumptionKwh }} kWh/mes - vendedor: {{ getSellerName(simulation.assignedSellerId) }}</p>
+            </div>
+            <div>
+              <span>{{ simulation.createdAt | date:'dd/MM/yyyy HH:mm' }}</span>
+              <a class="btn" routerLink="/simulacao/resultado">Ver detalhes do setup</a>
+            </div>
+          </article>
+        } @empty {
+          <article class="card empty">
+            <h3>Nenhuma simulacao enviada</h3>
+            <a class="btn primary" routerLink="/simulacao/upload">Fazer primeira simulacao</a>
+          </article>
+        }
+      </section>
+    </section>
+  </main>
+</div>

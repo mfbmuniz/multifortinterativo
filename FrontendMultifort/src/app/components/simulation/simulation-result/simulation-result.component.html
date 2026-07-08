@@ -1,0 +1,38 @@
+<div class="page-shell">
+  <app-header />
+  <main class="container result-page">
+    <section class="summary card">
+      <div>
+        <h1>Sua simulacao esta pronta!</h1>
+        <p>Com base no consumo medio de <strong>{{ pending.consumptionKwh }} kWh/mes</strong>, encontramos os melhores setups para voce.</p>
+      </div>
+      <div class="bill-box">
+        <span>Sua conta atual <strong>{{ pending.currentBillValue | currency:'BRL':'symbol':'1.0-0' }}</strong></span>
+        <span>Com energia solar <strong>{{ pending.solarBillValue | currency:'BRL':'symbol':'1.0-0' }}</strong></span>
+      </div>
+    </section>
+
+    <section class="setup-grid">
+      @for (setup of setups; track setup.id) {
+        <app-setup-card [setup]="setup" (details)="openDetails($event)" (selected)="chooseSetup($event)" />
+      }
+    </section>
+
+    <section class="next-step card">
+      <div>
+        <h2>Proximos passos</h2>
+        <p>Setup selecionado: <strong>{{ selectedSetup.name }}</strong>. Envie a simulacao para o comercial; se nao estiver logado, o sistema salva o rascunho e pede login.</p>
+      </div>
+      <button class="btn warning" type="button" (click)="sendToCommercial()">Enviar para comercial</button>
+    </section>
+
+    @if (successMessage) {
+      <p class="success">{{ successMessage }}</p>
+    }
+  </main>
+  <app-footer />
+</div>
+
+@if (detailsSetup) {
+  <app-setup-details-dialog [setup]="detailsSetup" (close)="detailsSetup = undefined" (selected)="chooseSetup($event)" />
+}

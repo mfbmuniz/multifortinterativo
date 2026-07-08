@@ -1,0 +1,57 @@
+<div class="page-shell">
+  <app-header />
+  <main class="container register-page">
+    <section>
+      <span class="badge">Cadastro gratuito</span>
+      <h1>Crie sua conta para acompanhar simulacoes e propostas.</h1>
+      <p>Novos cadastros entram com role USER. O administrador pode visualizar os usuarios e encaminhar simulacoes para vendedores.</p>
+    </section>
+
+    <form class="card" [formGroup]="form" (ngSubmit)="register()">
+      <div class="field">
+        <label for="name">Nome completo</label>
+        <input id="name" formControlName="name">
+      </div>
+      <div class="field">
+        <label for="email">E-mail</label>
+        <input id="email" type="email" formControlName="email">
+      </div>
+      <div class="form-grid">
+        <div class="field">
+          <label for="password">Senha</label>
+          <input id="password" type="password" formControlName="password">
+        </div>
+        <div class="field">
+          <label for="confirmPassword">Confirmar senha</label>
+          <input id="confirmPassword" type="password" formControlName="confirmPassword">
+        </div>
+      </div>
+      <div class="form-grid">
+        <div class="field">
+          <label for="gender">Sexo</label>
+          <select id="gender" formControlName="gender">
+            <option value="">Nao informar</option>
+            <option>Masculino</option>
+            <option>Feminino</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="phone">Telefone</label>
+          <input id="phone" formControlName="phone">
+        </div>
+      </div>
+      <div class="field">
+        <label for="city">Cidade</label>
+        <input id="city" formControlName="city" placeholder="Sao Paulo, SP">
+      </div>
+
+      @if (errorMessage) {
+        <p class="error">{{ errorMessage }}</p>
+      }
+
+      <button class="btn primary" type="submit">Criar conta</button>
+      <p class="muted">Ja possui conta? <a routerLink="/login">Entrar agora</a></p>
+    </form>
+  </main>
+  <app-footer />
+</div>

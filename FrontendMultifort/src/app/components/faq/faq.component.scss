@@ -1,0 +1,33 @@
+.content-page {
+  flex: 1;
+  padding: 64px 0;
+}
+
+header {
+  margin-bottom: 28px;
+}
+
+h1 {
+  margin: 0 0 10px;
+  font-size: 46px;
+}
+
+header p,
+article p {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.faq-list {
+  display: grid;
+  gap: 16px;
+}
+
+article {
+  padding: 24px;
+}
+
+article h2 {
+  margin: 0 0 8px;
+  font-size: 22px;
+}

@@ -1,0 +1,134 @@
+.hero {
+  position: relative;
+  min-height: 640px;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+  background: #143aa9;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(37, 84, 223, .95), rgba(37, 84, 223, .72)),
+    url("https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1600&auto=format&fit=crop");
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-content {
+  position: relative;
+  width: min(980px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+.badge {
+  display: inline-block;
+  border-radius: 999px;
+  color: #ffe08a;
+  background: rgba(255, 255, 255, .15);
+  padding: 10px 16px;
+  font-weight: 800;
+}
+
+h1 {
+  max-width: 880px;
+  margin: 28px 0 20px;
+  font-size: clamp(42px, 7vw, 76px);
+  line-height: 1.05;
+}
+
+h1 strong {
+  color: #ffe08a;
+}
+
+.hero p {
+  max-width: 720px;
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.hero-actions,
+.trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.trust span {
+  border: 1px solid rgba(255, 255, 255, .32);
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-weight: 700;
+}
+
+.steps,
+.benefits {
+  padding: 72px 0;
+}
+
+.steps header {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.steps h2,
+.benefits h2 {
+  margin: 0 0 12px;
+  font-size: clamp(32px, 4vw, 48px);
+}
+
+.step-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.step-grid .card {
+  padding: 32px;
+}
+
+.step-grid span {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--primary);
+  font-weight: 800;
+}
+
+.benefits {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.benefits ul {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.benefits li {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  padding: 18px;
+  font-weight: 800;
+}
+
+@media (max-width: 860px) {
+  .step-grid,
+  .benefits {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,31 @@
+<div class="page-shell">
+  <app-header />
+  <main class="container upload-page">
+    <section>
+      <span class="badge">Nova simulacao</span>
+      <h1>Envie sua fatura de energia em PDF.</h1>
+      <p>O sistema usa as informacoes basicas do arquivo e simula a analise para recomendar setups solares.</p>
+    </section>
+
+    <form class="card upload-card" (submit)="submit($event)">
+      <label class="dropzone" for="invoice">
+        <strong>Selecionar PDF</strong>
+        <span>Arraste mentalmente sua fatura ate aqui ou clique para escolher o arquivo.</span>
+        <input id="invoice" type="file" accept="application/pdf" (change)="onFileChange($event)">
+      </label>
+
+      @if (selectedFileName) {
+        <p class="file-name">Arquivo selecionado: <strong>{{ selectedFileName }}</strong></p>
+      }
+
+      @if (errorMessage) {
+        <p class="error">{{ errorMessage }}</p>
+      }
+
+      <button class="btn primary" type="submit" [disabled]="isUploading">
+        {{ isUploading ? 'Preparando analise...' : 'Analisar fatura' }}
+      </button>
+    </form>
+  </main>
+  <app-footer />
+</div>

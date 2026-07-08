@@ -1,0 +1,76 @@
+<div class="dashboard-layout">
+  <aside class="sidebar">
+    <a class="brand" routerLink="/">Multifort</a>
+    <nav>
+      <a class="active" routerLink="/painel/admin">Visao geral</a>
+      <a routerLink="/admin/setups" routerLinkActive="active">Setups</a>
+      <a routerLink="/painel/vendedor">Painel vendedor</a>
+    </nav>
+    <div class="sidebar-footer">
+      <span class="muted">{{ currentUser?.name }}</span>
+      <button type="button" (click)="logout()">Sair</button>
+    </div>
+  </aside>
+
+  <main class="dashboard-main">
+    <header class="dashboard-topbar">
+      <div>
+        <strong>Admin Principal</strong>
+        <p class="muted">Diretoria</p>
+      </div>
+      <a class="btn primary" routerLink="/admin/setups">Gerenciar setups</a>
+    </header>
+
+    <section class="dashboard-content">
+      <h1>Visao geral</h1>
+      <p class="muted">Metricas e ultimos leads solicitados na plataforma.</p>
+
+      <section class="metric-grid">
+        <article class="card metric"><span>Leads totais</span><strong>{{ simulations.length }}</strong></article>
+        <article class="card metric"><span>Usuarios</span><strong>{{ users.length }}</strong></article>
+        <article class="card metric"><span>Setups cadastrados</span><strong>{{ setups.length }}</strong></article>
+      </section>
+
+      <section class="card table-card">
+        <header class="table-header">
+          <div>
+            <h2>Ultimos orcamentos solicitados</h2>
+            <p class="muted">Distribua leads para os vendedores cadastrados.</p>
+          </div>
+        </header>
+        <table>
+          <thead>
+            <tr>
+              <th>Lead</th>
+              <th>Consumo</th>
+              <th>Setup sugerido</th>
+              <th>Status</th>
+              <th>Vendedor</th>
+              <th>Data</th>
+              <th>Acoes</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (simulation of simulations; track simulation.id) {
+              <tr>
+                <td><strong>{{ getUserName(simulation.userId) }}</strong></td>
+                <td>{{ simulation.consumptionKwh }} kWh</td>
+                <td>{{ getSetupName(simulation.selectedSetupId) }}</td>
+                <td><app-status-badge [status]="simulation.status" /></td>
+                <td>{{ getSellerName(simulation.assignedSellerId) }}</td>
+                <td>{{ simulation.createdAt | date:'dd/MM/yyyy HH:mm' }}</td>
+                <td><button class="btn" type="button" (click)="selectedSimulation = simulation">Atribuir</button></td>
+              </tr>
+            } @empty {
+              <tr><td colspan="7">Nenhuma simulacao enviada ainda.</td></tr>
+            }
+          </tbody>
+        </table>
+      </section>
+    </section>
+  </main>
+</div>
+
+@if (selectedSimulation) {
+  <app-assign-seller-dialog [sellers]="sellers" (close)="selectedSimulation = undefined" (assigned)="assignSeller($event)" />
+}

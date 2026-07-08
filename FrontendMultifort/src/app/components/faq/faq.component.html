@@ -1,0 +1,18 @@
+<div class="page-shell">
+  <app-header />
+  <main class="container content-page">
+    <header>
+      <h1>Perguntas frequentes</h1>
+      <p>Respostas diretas para apresentar o funcionamento do projeto.</p>
+    </header>
+    <section class="faq-list">
+      @for (item of questions; track item[0]) {
+        <article class="card">
+          <h2>{{ item[0] }}</h2>
+          <p>{{ item[1] }}</p>
+        </article>
+      }
+    </section>
+  </main>
+  <app-footer />
+</div>

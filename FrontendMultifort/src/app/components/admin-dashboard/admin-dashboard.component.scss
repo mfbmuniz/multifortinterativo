@@ -1,0 +1,32 @@
+h1 {
+  margin: 0 0 6px;
+  font-size: 36px;
+}
+
+.metric-grid {
+  grid-template-columns: repeat(3, 1fr);
+  margin: 28px 0;
+}
+
+.metric {
+  display: grid;
+  gap: 18px;
+  padding: 24px;
+}
+
+.metric span {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.metric strong {
+  font-size: 42px;
+}
+
+.table-header {
+  padding: 24px;
+}
+
+.table-header h2 {
+  margin: 0 0 6px;
+}

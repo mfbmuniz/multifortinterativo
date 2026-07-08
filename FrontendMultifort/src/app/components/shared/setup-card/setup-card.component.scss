@@ -1,0 +1,85 @@
+.setup-card {
+  position: relative;
+  display: grid;
+  gap: 24px;
+  min-height: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  padding: 28px;
+}
+
+.setup-card.recommended {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 1px var(--primary);
+}
+
+.ribbon {
+  position: absolute;
+  top: -16px;
+  right: 24px;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--primary);
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+header span {
+  align-self: start;
+  border-radius: 999px;
+  color: var(--muted);
+  background: #edf2f7;
+  padding: 6px 12px;
+  font-weight: 700;
+}
+
+.saving {
+  color: var(--success);
+  font-size: 42px;
+}
+
+.saving small {
+  font-size: 18px;
+}
+
+dl {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+}
+
+dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+dt {
+  color: var(--muted);
+}
+
+dd {
+  margin: 0;
+  font-weight: 800;
+  text-align: right;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}

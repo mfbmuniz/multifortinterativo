@@ -1,0 +1,19 @@
+.processing-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  gap: 24px;
+  padding: 24px;
+}
+
+.card {
+  width: min(620px, 100%);
+  display: grid;
+  gap: 22px;
+  padding: 48px;
+  text-align: center;
+}
+
+p {
+  color: var(--muted);
+}

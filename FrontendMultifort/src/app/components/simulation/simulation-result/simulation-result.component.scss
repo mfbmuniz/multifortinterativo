@@ -1,0 +1,76 @@
+.result-page {
+  flex: 1;
+  display: grid;
+  gap: 32px;
+  padding: 48px 0;
+}
+
+.summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 36px;
+}
+
+.summary p,
+.next-step p {
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.bill-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.bill-box span {
+  display: grid;
+  gap: 8px;
+  min-width: 190px;
+  padding: 18px;
+  text-align: center;
+  color: var(--muted);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.bill-box strong {
+  color: var(--ink);
+  font-size: 24px;
+}
+
+.bill-box span:last-child strong {
+  color: var(--success);
+}
+
+.next-step {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  border-color: #f5d271;
+  background: #fffbea;
+  padding: 28px;
+}
+
+@media (max-width: 860px) {
+  .summary,
+  .next-step {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .bill-box {
+    grid-template-columns: 1fr;
+  }
+}

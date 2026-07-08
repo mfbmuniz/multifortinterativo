@@ -1,0 +1,65 @@
+<div class="dashboard-layout">
+  <aside class="sidebar">
+    <a class="brand" routerLink="/">Multifort</a>
+    <nav>
+      <a class="active" routerLink="/painel/vendedor">Minhas oportunidades</a>
+      <a routerLink="/painel/usuario">Painel cliente</a>
+    </nav>
+    <div class="sidebar-footer">
+      <span class="muted">{{ user?.name }}</span>
+      <button type="button" (click)="logout()">Sair</button>
+    </div>
+  </aside>
+
+  <main class="dashboard-main">
+    <header class="dashboard-topbar">
+      <div>
+        <strong>Online</strong>
+        <p class="muted">Consultor de vendas</p>
+      </div>
+      <button class="btn primary" type="button">Novo lead manual</button>
+    </header>
+
+    <section class="dashboard-content">
+      <h1>Minhas oportunidades</h1>
+      <p class="muted">Acompanhe leads atribuidos pelo administrador.</p>
+
+      <section class="metric-grid">
+        <article class="card metric"><span>Leads novos</span><strong>{{ simulations.length }}</strong></article>
+        <article class="card metric"><span>Em negociacao</span><strong>{{ simulations.length }}</strong></article>
+        <article class="card metric"><span>Valor potencial</span><strong>{{ 0 | currency:'BRL':'symbol':'1.0-0' }}</strong></article>
+      </section>
+
+      <section class="card table-card">
+        <header class="table-header"><h2>Lista de oportunidades</h2></header>
+        <table>
+          <thead>
+            <tr>
+              <th>Cliente</th>
+              <th>Setup</th>
+              <th>Valor</th>
+              <th>Status</th>
+              <th>Acao rapida</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (simulation of simulations; track simulation.id) {
+              <tr>
+                <td>{{ getClientName(simulation.userId) }}</td>
+                <td>{{ getSetupName(simulation.selectedSetupId) }}</td>
+                <td>{{ getSetupPrice(simulation.selectedSetupId) | currency:'BRL':'symbol':'1.0-0' }}</td>
+                <td><app-status-badge [status]="simulation.status" /></td>
+                <td class="actions">
+                  <button class="btn" type="button" (click)="markInProgress(simulation.id)">Negociar</button>
+                  <button class="btn primary" type="button" (click)="markCompleted(simulation.id)">Concluir</button>
+                </td>
+              </tr>
+            } @empty {
+              <tr><td colspan="5">Nenhuma oportunidade atribuida a voce.</td></tr>
+            }
+          </tbody>
+        </table>
+      </section>
+    </section>
+  </main>
+</div>
